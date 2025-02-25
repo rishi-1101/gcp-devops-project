@@ -47,6 +47,7 @@ env:
   GKE_NAMESPACE: 'gcp-devops-test' # TODO: update to your namespace
   REPOSITORY: 'gke-deployment-test-pipeline' # TODO: update to your Artifact Registry docker repository name
   IMAGE: 'static-site'
+  CONTAINER_NAME: 'gcp-devops-gke'
   WORKLOAD_IDENTITY_PROVIDER: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider' # TODO: update to your workload identity provider
 
 jobs:
@@ -117,4 +118,4 @@ jobs:
       # Deploy the Docker image to the GKE cluster
       - name: 'Deploy to GKE'
         run: |
-          kubectl set image deployment/${{ env.DEPLOYMENT_NAME }} ${IMAGE}=${DOCKER_TAG} -n ${{ env.GKE_NAMESPACE }}
+          kubectl set image deployment/${{ env.DEPLOYMENT_NAME }} ${CONTAINER_NAME}=${DOCKER_TAG} -n ${{ env.GKE_NAMESPACE }}
