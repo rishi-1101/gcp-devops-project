@@ -86,6 +86,17 @@ jobs:
         run: |
           gcloud auth configure-docker us-east1-docker.pkg.dev
 
+      # Install GCLOUD SDK
+      - name: Install Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+            version: 'latest'
+            project_id: ${{ secrets.GCP_PROJECT_ID }}
+            zone: ${{ secrets.GCP_ZONE }}
+            service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+            export_default_credentials: true
+            install_components: gke-gcloud-auth-plugin
+
       # Build the Docker image
       - name: 'Build and push Docker container'
         run: |-
