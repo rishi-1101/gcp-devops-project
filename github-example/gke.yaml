@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: gcp-devops-gke
-        image: us-west1-docker.pkg.dev/kodekloud-gke-practice/gcp-devops-project/python-docker-image:latest
+        image: us-east1-docker.pkg.dev/gcp-prj-falcon-npr-d-01/gke-deployment-test-pipeline/static-site:${GITHUB_SHA}
         ports:
         - containerPort: 5000
         env:
