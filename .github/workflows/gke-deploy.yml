@@ -53,7 +53,10 @@ jobs:
   setup-build-publish-deploy:
     name: 'Setup, Build, Publish, and Deploy'
     runs-on: 'ubuntu-latest'
-    environment: 'production'
+    defaults:
+      run:
+        shell: bash # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+        working-directory: ./main
 
     permissions:
       contents: 'read'
