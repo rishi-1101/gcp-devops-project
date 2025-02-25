@@ -30,7 +30,7 @@
 #    https://cloud.google.com/iam/docs/manage-access-other-resources
 #
 # 5. Change the values in the "env" block to match your values.
-# test
+# test123
 
 name: 'Build and Deploy to GKE'
 
