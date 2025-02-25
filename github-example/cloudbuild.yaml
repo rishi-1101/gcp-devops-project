@@ -33,3 +33,4 @@ steps:
   - --location=us-west1-a
   - --cluster=gcp-devops-project
   - --namespace=gcp-devops-prod
+
