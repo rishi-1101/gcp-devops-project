@@ -100,7 +100,7 @@ jobs:
         run: |
           DATE_TAG=$(date +'%d%m%H%M')
           DOCKER_TAG="${GAR_LOCATION}-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY}/${IMAGE}:${DATE_TAG}"
-          echo $DATE_TAG
+          echo $DOCKER_TAG
 
           docker build \
             --tag "${DOCKER_TAG}" \
