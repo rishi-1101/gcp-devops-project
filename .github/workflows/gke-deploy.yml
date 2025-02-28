@@ -118,4 +118,4 @@ jobs:
       # Deploy the Docker image to the GKE cluster
       - name: 'Deploy to GKE'
         run: |
-          kubectl set image deployment/gcp-devops-gke gcp-devops-gke=us-east1-docker.pkg.dev/gcp-prj-falcon-npr-d-01/gke-deployment-test-pipeline/static-site:25021538 -n gcp-devops-test
+          kubectl apply -f gke.yaml
